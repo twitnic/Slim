@@ -67,7 +67,7 @@ class LogTest extends PHPUnit\Framework\TestCase
 
     public function testSetInvalidLevel()
     {
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException('InvalidArgumentException');
         $log = new \Slim\Log(new MyWriter());
         $log->setLevel(\Slim\Log::DEBUG + 1);
     }

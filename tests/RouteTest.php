@@ -146,7 +146,7 @@ class RouteTest extends PHPUnit\Framework\TestCase
 
     public function testSetCallableWithInvalidArgument()
     {
-        $this->setExpectedException('\InvalidArgumentException');
+        $this->expectException('\InvalidArgumentException');
         $route = new \Slim\Route('/foo', 'doesNotExist'); // <-- Called inside __construct()
     }
 
@@ -192,7 +192,7 @@ class RouteTest extends PHPUnit\Framework\TestCase
 
     public function testGetParamThatDoesNotExist()
     {
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException('InvalidArgumentException');
 
         $route = new \Slim\Route('/hello/:first/:last', function () {});
 
@@ -220,7 +220,7 @@ class RouteTest extends PHPUnit\Framework\TestCase
 
     public function testSetParamThatDoesNotExist()
     {
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException('InvalidArgumentException');
 
         $route = new \Slim\Route('/hello/:first/:last', function () {});
         $route->matches('/hello/mr/anderson'); // <-- Parses params from argument
@@ -477,7 +477,7 @@ class RouteTest extends PHPUnit\Framework\TestCase
 
     public function testSetMiddlewareWithInvalidArgument()
     {
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException('InvalidArgumentException');
 
         $route = new \Slim\Route('/foo', function () {});
         $route->setMiddleware('doesNotExist'); // <-- Should throw InvalidArgumentException
@@ -485,7 +485,7 @@ class RouteTest extends PHPUnit\Framework\TestCase
 
     public function testSetMiddlewareWithArrayWithInvalidArgument()
     {
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException('InvalidArgumentException');
 
         $route = new \Slim\Route('/foo', function () {});
         $route->setMiddleware(array('doesNotExist'));

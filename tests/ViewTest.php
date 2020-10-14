@@ -99,7 +99,7 @@ class ViewTest extends PHPUnit\Framework\TestCase
 
     public function testSetDataInvalidArgument()
     {
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException('InvalidArgumentException');
 
         $view = new \Slim\View();
         $view->setData('foo');
@@ -143,7 +143,7 @@ class ViewTest extends PHPUnit\Framework\TestCase
 
     public function testAppendDataInvalidArgument()
     {
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException('InvalidArgumentException');
 
         $view = new \Slim\View();
         $view->appendData('foo');
@@ -186,7 +186,7 @@ class ViewTest extends PHPUnit\Framework\TestCase
 
     public function testDisplayTemplateThatDoesNotExist()
     {
-        $this->setExpectedException('\RuntimeException');
+        $this->expectException('\RuntimeException');
 
         $view = new \Slim\View();
 

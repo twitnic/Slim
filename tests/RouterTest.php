@@ -75,7 +75,7 @@ class RouterTest extends PHPUnit\Framework\TestCase
      */
     public function testAddNamedRouteWithDuplicateKey()
     {
-        $this->setExpectedException('RuntimeException');
+        $this->expectException('RuntimeException');
 
         $router = new \Slim\Router();
         $route = new \Slim\Route('/foo', function () {});
@@ -242,7 +242,7 @@ class RouterTest extends PHPUnit\Framework\TestCase
 
     public function testUrlForIfNoSuchRoute()
     {
-        $this->setExpectedException('RuntimeException');
+        $this->expectException('RuntimeException');
 
         $router = new \Slim\Router();
         $router->urlFor('foo', array('abc' => '123'));

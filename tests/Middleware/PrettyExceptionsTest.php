@@ -128,7 +128,7 @@ class PrettyExceptionsTest extends PHPUnit\Framework\TestCase
      */
     public function testWithCustomLogWriter()
     {
-        $this->setExpectedException('\LogicException');
+        $this->expectException('\LogicException');
 
         \Slim\Environment::mock(array(
             'SCRIPT_NAME' => '/index.php',

@@ -283,7 +283,7 @@ class RequestTest extends PHPUnit\Framework\TestCase
      */
     public function testPostWithoutInput()
     {
-        $this->setExpectedException('RuntimeException');
+        $this->expectException('RuntimeException');
         $env = \Slim\Environment::mock();
         unset($env['slim.input']);
         $req = new \Slim\Http\Request($env);

@@ -42,7 +42,7 @@ class LogWriterTest extends PHPUnit\Framework\TestCase
 
     public function testInstantiationWithNonResource()
     {
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException('InvalidArgumentException');
         $fw = new \Slim\LogWriter(@fopen('/foo/bar.txt', 'w'));
     }
 }

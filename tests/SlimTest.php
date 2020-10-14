@@ -711,7 +711,7 @@ class SlimTest extends PHPUnit\Framework\TestCase
 
     public function testLastModifiedOnlyAcceptsIntegers()
     {
-        $this->setExpectedException('\InvalidArgumentException');
+        $this->expectException('\InvalidArgumentException');
         \Slim\Environment::mock(array(
             'SCRIPT_NAME' => '/foo', //<-- Physical
             'PATH_INFO' => '/bar', //<-- Virtual
@@ -783,7 +783,7 @@ class SlimTest extends PHPUnit\Framework\TestCase
      */
     public function testETagWithInvalidType()
     {
-        $this->setExpectedException('\InvalidArgumentException');
+        $this->expectException('\InvalidArgumentException');
         \Slim\Environment::mock(array(
             'SCRIPT_NAME' => '/foo', //<-- Physical
             'PATH_INFO' => '/bar', //<-- Virtual
@@ -957,7 +957,7 @@ class SlimTest extends PHPUnit\Framework\TestCase
      */
     public function testStop()
     {
-        $this->setExpectedException('\Slim\Exception\Stop');
+        $this->expectException('\Slim\Exception\Stop');
         $s = new \Slim\Slim();
         $s->stop();
     }
@@ -1242,7 +1242,7 @@ class SlimTest extends PHPUnit\Framework\TestCase
      */
     public function testFailureWhenAddingCircularMiddleware()
     {
-        $this->setExpectedException('\RuntimeException');
+        $this->expectException('\RuntimeException');
         $middleware = new CustomMiddleware;
         $s = new \Slim\Slim;
         $s->add($middleware);
@@ -1489,14 +1489,14 @@ class SlimTest extends PHPUnit\Framework\TestCase
         $s = new \Slim\Slim();
         $errCallback = function () { echo "404"; };
         $s->error($errCallback);
-        $this->assertSame($errCallback, PHPUnit_Framework_Assert::readAttribute($s, 'error'));
+        $this->assertSame($errCallback, PHPUnit\Framework\Assert::readAttribute($s, 'error'));
     }
 
     /**
      * Slim should throw a Slim_Exception_Stop if error callback is not callable
      */
     public function testErrorHandlerIfNotCallable() {
-        $this->setExpectedException('\Slim\Exception\Stop');
+        $this->expectException('\Slim\Exception\Stop');
         $s = new \Slim\Slim(array("log.enabled" => false));
         $errCallback = 'foo';
         $s->error($errCallback);
@@ -1509,14 +1509,14 @@ class SlimTest extends PHPUnit\Framework\TestCase
         $s = new \Slim\Slim();
         $notFoundCallback = function () { echo "404"; };
         $s->notFound($notFoundCallback);
-        $this->assertSame($notFoundCallback, PHPUnit_Framework_Assert::readAttribute($s, 'notFound'));
+        $this->assertSame($notFoundCallback, PHPUnit\Framework\Assert::readAttribute($s, 'notFound'));
     }
 
     /**
      * Slim should throw a Slim_Exception_Stop if NotFound callback is not callable
      */
     public function testNotFoundHandlerIfNotCallable() {
-        $this->setExpectedException('\Slim\Exception\Stop');
+        $this->expectException('\Slim\Exception\Stop');
         $s = new \Slim\Slim();
         $notFoundCallback = 'foo';
         $s->notFound($notFoundCallback);
