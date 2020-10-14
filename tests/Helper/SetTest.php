@@ -30,7 +30,7 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-class SetTest extends PHPUnit_Framework_TestCase
+class SetTest extends PHPUnit\Framework\TestCase
 {
     protected $bag;
     protected $property;

@@ -30,7 +30,7 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-class ResponseTest extends PHPUnit_Framework_TestCase
+class ResponseTest extends PHPUnit\Framework\TestCase
 {
     public function testConstructWithoutArgs()
     {

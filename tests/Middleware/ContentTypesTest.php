@@ -30,7 +30,7 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-class ContentTypesTest extends PHPUnit_Framework_TestCase
+class ContentTypesTest extends PHPUnit\Framework\TestCase
 {
     public function setUp()
     {

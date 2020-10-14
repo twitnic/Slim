@@ -30,7 +30,7 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-class ViewTest extends PHPUnit_Framework_TestCase
+class ViewTest extends PHPUnit\Framework\TestCase
 {
     public function testGetDataAll()
     {

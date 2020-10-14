@@ -30,7 +30,7 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-class PrettyExceptionsTest extends PHPUnit_Framework_TestCase
+class PrettyExceptionsTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Test middleware returns successful response unchanged

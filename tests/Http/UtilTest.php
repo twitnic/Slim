@@ -30,7 +30,7 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-class SlimHttpUtilTest extends PHPUnit_Framework_TestCase
+class SlimHttpUtilTest extends PHPUnit\Framework\TestCase
 {
     /**
      * Test strip slashes when magic quotes disabled
